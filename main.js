@@ -8,7 +8,7 @@ const apiRick=async(pagina)=>{
     data.results.map(item=>{
         divItem =document.createElement("div")
         divItem.innerHTML=`
-        <div class="card" style="width: 18rem;">
+        <div class="card sombra" style="width: 18rem;">
   <img src="${item.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${item.name}</h5>
@@ -31,7 +31,7 @@ apilocation =async(pagina2)=>{
     divRes2.innerHTML = ""
     data2.results.map(item=>{
         divItem2 =document.createElement("div")
-        divItem2.innerHTML=`<div class="card" style="width: 18rem;">
+        divItem2.innerHTML=`<div class="card sombra" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">${item.name}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">Es de la dimension ${item.dimension}  </h6>
@@ -52,7 +52,7 @@ apiepisodios =async(pagina3)=>{
     divRes2.innerHTML = ""
     data2.results.map(item=>{
         divItem2 =document.createElement("div")
-        divItem2.innerHTML=`<div class="card" style="width: 18rem;">
+        divItem2.innerHTML=`<div class="card sombra" style="width: 18rem;">
         <div class="card-body">
           <h2 class="card-title">El nombre del episodio es <Br> <b>${item.name} </b></h2>
           <h6 class="card-subtitle mb-2 text-body-secondary">se estreno  ${item.air_date} </h6>

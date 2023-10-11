@@ -13,20 +13,25 @@ body{
 }
 
 #resultado{
+    
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto;
-    gap: 20px   ;
+    gap: 12px   ;
+    
 }
 #resultado2{
-    padding: 12px;
+
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto;
     gap: 20px   ;
 }
 #resultado3{
-    padding: 12px;
+    width: 80%;
+    
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto;
@@ -37,4 +42,26 @@ body{
 }
 .select:hover{
     background-color: #c6f741;
+}
+.centrar{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+.sombra{
+    border: 1px solid black;
+    -webkit-box-shadow: 7px -7px 24px 14px rgba(0,0,0,0.16);
+    -moz-box-shadow: 7px -7px 24px 14px rgba(0,0,0,0.16);
+    box-shadow: 7px -7px 24px 14px rgba(0,0,0,0.16);
+
+}
+h1{
+    background-color: rgba(153, 208, 128, 0.411);
+    
+}
+.color{
+    color: #344700;
+}
+.colornavbar{
+    background-color: rgba(153, 208, 128, 0.411);
 }
