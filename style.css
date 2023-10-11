@@ -25,3 +25,16 @@ body{
     grid-template-rows: auto;
     gap: 20px   ;
 }
+#resultado3{
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 20px   ;
+}
+.select{
+    background-color: #abe900;
+}
+.select:hover{
+    background-color: #c6f741;
+}
