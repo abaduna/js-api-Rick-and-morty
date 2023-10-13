@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUscador</title>
+    <title>Buscador</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
@@ -11,9 +11,10 @@
 <body>
     <div class="container">
         <div class="div imput-tarea" >
-            <input type="text" class="form-control" onkeyup="buscarPersonaje(this.value)" placeholder="Buscar Personaje" id="input-peronsajes">
+            <input type="text" class="form-control "   placeholder="Buscar Personaje" id="input-peronsajes">
+            <button class="btn mt-3 btn-info btn-lg btn-block" onclick="buscarEnLaAPI()">Buscar</button>
         </div>
-        <div id="persoanjes" class="pt-5 centar">
+        <div id="persoanjes" class="pt-5 centarp">
 
         </div>
     </div>

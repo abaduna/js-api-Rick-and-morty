@@ -64,19 +64,25 @@ apiepisodios =async(pagina3)=>{
     divRes2.appendChild(divItem2)
     })
 }
-const buscarPersonaje=(persoanje)=>{
-  console.log(persoanje)
-  setTimeout( buscarEnLaAPI(persoanje),1000)
+
+// const buscarPersonaje=(persoanje)=>{
+  
+//   setTimeout( buscarEnLaAPI(persoanje),1000)
  
-}
-buscarEnLaAPI=async(personaje)=>{
-    
-    let url =`https://rickandmortyapi.com/api/character/?page=2&name=${personaje}`
+// }
+const buscarEnLaAPI=async()=>{
+  const  persoanje2 = document.getElementById("input-peronsajes").value
+  console.log(persoanje2)
+    let url =`https://rickandmortyapi.com/api/character/?page=2&name=${persoanje2}`
     const api = await fetch(url)
-    const  data = await api.json()
+    let data = {}
+    data = await api.json()
+    console.log(data)
     divRes2 = document.getElementById("persoanjes")
-    // divRes2.innerHTML = ""
-    data.results.map(item=>{
+    divRes2.innerHTML = ""
+    if (data.info.count >1) {
+      console.log("no da error")
+      data.results.map(item=>{
         divItem2 =document.createElement("div")
         divItem2.innerHTML=`
       <div class="card centarhijo sombra" style="width: 18rem;">
@@ -90,8 +96,23 @@ buscarEnLaAPI=async(personaje)=>{
         
     divRes2.appendChild(divItem2)
     })
+    } else  {
+      console.log("error")
+    //   divRes2 = document.getElementById("persoanjes")
+    //   divItem2 =document.createElement("div")
+    //     divItem2.innerHTML=`
+    //   <div class="card centarhijo sombra" style="width: 18rem;">
+    //     <div class="card-body">
+    //       <h2 class="card-title ">El nombre del persoanje <Br> <b>NO se encuentra </b></h2>
+        
+          
+    //     </div>
+    //   </div>`
+        
+    // divRes2.appendChild(divItem2)
+    }
+
 }
 apiepisodios(1)
 apilocation(1)
 apiRick(1)
-//<p class="card-text"> ${item.gender == "Male" ?"femenino"}</p>
