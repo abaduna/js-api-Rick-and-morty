@@ -77,41 +77,52 @@ const buscarEnLaAPI=async()=>{
     const api = await fetch(url)
     let data = {}
     data = await api.json()
-    console.log(data)
+    escribirData(data)
+}
+const escribirData= data => {
+  console.log(data)
+  if (data.error ==='There is nothing here') {
+    console.log("error en la api")
+    mostarError()
+    return
+  }
+  
+  if (data.info.count >1) {
     divRes2 = document.getElementById("persoanjes")
     divRes2.innerHTML = ""
-    if (data.info.count >1) {
-      console.log("no da error")
-      data.results.map(item=>{
-        divItem2 =document.createElement("div")
-        divItem2.innerHTML=`
-      <div class="card centarhijo sombra" style="width: 18rem;">
-        <div class="card-body">
-          <h2 class="card-title ">El nombre del persoanje <Br> <b>${item.name} </b></h2>
-          <h6 class="card-subtitle mb-2 text-body-secondary">su especie  ${item.species} </h6>
-          <img src="${item.image}" class="card-img-top" alt="...">
-          
-        </div>
-      </div>`
+    console.log("no da error")
+    data.results.map(item=>{
+      divItem2 =document.createElement("div")
+      divItem2.innerHTML=`
+    <div class="card centarhijo sombra" style="width: 18rem;">
+      <div class="card-body">
+        <h2 class="card-title ">El nombre del persoanje <Br> <b>${item.name} </b></h2>
+        <h6 class="card-subtitle mb-2 text-body-secondary">su especie  ${item.species} </h6>
+        <img src="${item.image}" class="card-img-top" alt="...">
         
-    divRes2.appendChild(divItem2)
-    })
-    } else  {
-      console.log("error")
-    //   divRes2 = document.getElementById("persoanjes")
-    //   divItem2 =document.createElement("div")
-    //     divItem2.innerHTML=`
-    //   <div class="card centarhijo sombra" style="width: 18rem;">
-    //     <div class="card-body">
-    //       <h2 class="card-title ">El nombre del persoanje <Br> <b>NO se encuentra </b></h2>
-        
-          
-    //     </div>
-    //   </div>`
-        
-    // divRes2.appendChild(divItem2)
-    }
-
+      </div>
+    </div>` 
+      
+  divRes2.appendChild(divItem2)
+  return
+  })
+  }
+}
+const mostarError=()=>{
+  
+  divRes3 = document.getElementById("persoanjes")
+  divRes3.innerHTML = ""
+  divItem3 =document.createElement("div")
+  divItem3.innerHTML=`
+  <div class="card centarhijo sombra" style="width: 18rem;">
+    <div class="card-body">
+      <h2 class="card-title ">El nombre del persoanje <Br> <b>NO se encuentra </b></h2>
+    
+      
+    </div>
+  </div>`
+    
+divRes3.appendChild(divItem3)
 }
 apiepisodios(1)
 apilocation(1)
