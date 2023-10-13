@@ -64,6 +64,33 @@ apiepisodios =async(pagina3)=>{
     divRes2.appendChild(divItem2)
     })
 }
+const buscarPersonaje=(persoanje)=>{
+  console.log(persoanje)
+  setTimeout( buscarEnLaAPI(persoanje),1000)
+ 
+}
+buscarEnLaAPI=async(personaje)=>{
+    
+    let url =`https://rickandmortyapi.com/api/character/?page=2&name=${personaje}`
+    const api = await fetch(url)
+    const  data = await api.json()
+    divRes2 = document.getElementById("persoanjes")
+    // divRes2.innerHTML = ""
+    data.results.map(item=>{
+        divItem2 =document.createElement("div")
+        divItem2.innerHTML=`
+      <div class="card centarhijo sombra" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title ">El nombre del persoanje <Br> <b>${item.name} </b></h2>
+          <h6 class="card-subtitle mb-2 text-body-secondary">su especie  ${item.species} </h6>
+          <img src="${item.image}" class="card-img-top" alt="...">
+          
+        </div>
+      </div>`
+        
+    divRes2.appendChild(divItem2)
+    })
+}
 apiepisodios(1)
 apilocation(1)
 apiRick(1)

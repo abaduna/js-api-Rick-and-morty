@@ -65,3 +65,13 @@ h1{
 .colornavbar{
     background-color: rgba(153, 208, 128, 0.411);
 }
+.centar{
+    display: flex;
+    flex-direction: column;
+    gap: 12px   ;
+    border: 1px solid wheat;
+    justify-content: center;
+}
+.centarhijo{
+    margin: auto;
+}
